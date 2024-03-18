@@ -67,13 +67,13 @@ class ScreenSignup extends StatelessWidget {
                     ),
                     backgroundColor: Color.fromARGB(255, 29, 43, 121)),
                 onPressed: () {
-                  firestore.update();
-                  // ctrl.emailotp(context);
-                  // Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
-                  //   builder: (context) {
-                  //     return ScreenOtp();
-                  //   },
-                  // ), (route) => false);
+               //  firestore.update();
+                   ctrl.emailotp(context);
+                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+                     builder: (context) {
+                       return ScreenOtp();
+            },
+                   ), (route) => false);
                 },
                 child: Text(
                   "signup",

@@ -18,7 +18,14 @@ class AuthController extends ChangeNotifier {
   TextEditingController loginemail = TextEditingController();
   TextEditingController loginpassword = TextEditingController();
   TextEditingController resetlink = TextEditingController();
-  TextEditingController otp = TextEditingController();
+  TextEditingController otp = TextEditingController();  
+   TextEditingController player = TextEditingController();
+    TextEditingController team = TextEditingController();
+     TextEditingController positionname= TextEditingController();
+     TextEditingController updateplayer = TextEditingController();
+    TextEditingController updateteam = TextEditingController();
+     TextEditingController updatecountryname= TextEditingController();
+
   EmailOTP myAuth = EmailOTP();
 
   signup(context) async {
