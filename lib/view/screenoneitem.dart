@@ -1,20 +1,19 @@
+import 'package:firebase_2/viewmodel/firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class ScreenResetPwd extends StatelessWidget {
-  const ScreenResetPwd({super.key});
-
+class screenOneItem extends StatelessWidget {
+  screenOneItem({super.key});
+  final firestore = Firestore();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: Center(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextFormField(),
-          OutlinedButton(onPressed: () {}, child: Text("Sent Reset link"))
-        ],
+        children: [],
       ),
-    );
+    ));
   }
-}
+}//.dd
