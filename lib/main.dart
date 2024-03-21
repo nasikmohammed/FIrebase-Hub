@@ -1,7 +1,4 @@
-import 'package:firebase_2/view/otp.dart';
-import 'package:firebase_2/view/screencrud.dart';
-import 'package:firebase_2/view/screenhome.dart';
-import 'package:firebase_2/view/screenlogin.dart';
+
 import 'package:firebase_2/view/screensignup.dart';
 import 'package:firebase_2/viewmodel/controller.dart';
 import 'package:flutter/material.dart';
