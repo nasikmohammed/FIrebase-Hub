@@ -67,18 +67,57 @@ class ScreenSignup extends StatelessWidget {
                     ),
                     backgroundColor: Color.fromARGB(255, 29, 43, 121)),
                 onPressed: () {
-               //  firestore.update();
-                   ctrl.emailotp(context);
+                  //  firestore.update();
+                  ctrl.emailotp(context);
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
-                     builder: (context) {
-                       return ScreenOtp();
-            },
-                   ), (route) => false);
+                    builder: (context) {
+                      return ScreenOtp();
+                    },
+                  ), (route) => false);
                 },
                 child: Text(
                   "signup",
                   style: GoogleFonts.teko(color: Colors.white, fontSize: 20),
                 )),
+            TextButton.icon(
+              icon: Icon(
+                Icons.g_mobiledata_sharp,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Sign With GOOGLE",
+                style: GoogleFonts.teko(fontSize: 20, color: Colors.white),
+              ),
+              onPressed: () {
+                firestore.signInWithGoogle();
+              },
+            ),
+            TextButton.icon(
+              icon: Icon(
+                Icons.facebook,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Sign With Facebook",
+                style: GoogleFonts.teko(fontSize: 20, color: Colors.white),
+              ),
+              onPressed: () {
+                firestore.signInWithFacebook();
+              },
+            ),
+            TextButton.icon(
+              icon: Icon(
+                Icons.g_mobiledata_sharp,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Sign With GITHUB",
+                style: GoogleFonts.teko(fontSize: 20, color: Colors.white),
+              ),
+              onPressed: () {
+                firestore.signInWithGitHub();
+              },
+            )
           ],
         ),
       ),

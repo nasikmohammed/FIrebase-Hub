@@ -44,6 +44,8 @@ dependencies:
   email_otp: ^2.0.1
   email_auth: ^1.0.0
   google_fonts: ^4.0.4
+  google_sign_in: ^6.1.6
+  flutter_facebook_auth: ^5.0.11
   
   
 

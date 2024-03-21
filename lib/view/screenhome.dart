@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_2/view/screenUpdate.dart';
 import 'package:firebase_2/view/screencrud.dart';
+import 'package:firebase_2/view/screenoneitem.dart';
 import 'package:firebase_2/viewmodel/controller.dart';
 import 'package:firebase_2/viewmodel/firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,62 +48,73 @@ class ScreenHome extends StatelessWidget {
                   final id = Playersnap["id"];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      elevation: 2,
-                      child: Container(
-                        height: 100,
-                        color: Color.fromARGB(255, 238, 238, 219),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(Playersnap["playername"],
+                    child: InkWell(
+                      onTap: () {
+                        print("Card Inkwell");
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) {
+                            return screenOneItem();
+                          },
+                        ));
+                      },
+                      child: Card(
+                        elevation: 2,
+                        child: Container(
+                          height: 100,
+                          color: Color.fromARGB(255, 238, 238, 219),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(Playersnap["playername"],
+                                      style: GoogleFonts.teko(
+                                          color: Color.fromARGB(255, 0, 0, 0),
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)),
+                                  Text(Playersnap["team"],
+                                      style: GoogleFonts.teko(
+                                          color: Color.fromARGB(255, 0, 0, 0),
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)),
+                                  Text(
+                                    Playersnap["country"],
                                     style: GoogleFonts.teko(
-                                        color: Color.fromARGB(255, 0, 0, 0),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold)),
-                                Text(Playersnap["team"],
-                                    style: GoogleFonts.teko(
-                                        color: Color.fromARGB(255, 0, 0, 0),
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold)),
-                                Text(
-                                  Playersnap["country"],
-                                  style: GoogleFonts.teko(
-                                    color: Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  Navigator.of(context)
-                                      .pushReplacement(MaterialPageRoute(
-                                    builder: (context) {
-                                      return ScreenUpdate();
-                                    },
-                                  ));
-                                },
-                                icon: Icon(
-                                  Icons.edit,
-                                  color: Color.fromARGB(255, 35, 173, 214),
-                                )),
-                            IconButton(
-                                onPressed: () {
-                                  firestore.deleteDocument(id);
-                                },
-                                icon: Icon(
-                                  Icons.delete,
-                                  color: Colors.red,
-                                ))
-                          ],
+                                ],
+                              ),
+                              IconButton(
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .pushReplacement(MaterialPageRoute(
+                                      builder: (context) {
+                                        return ScreenUpdate();
+                                      },
+                                    ));
+                                  },
+                                  icon: Icon(
+                                    Icons.edit,
+                                    color: Color.fromARGB(255, 35, 173, 214),
+                                  )),
+                              IconButton(
+                                  onPressed: () {
+                                    firestore.deleteDocument(id);
+                                  },
+                                  icon: Icon(
+                                    Icons.delete,
+                                    color: Colors.red,
+                                  ))
+                            ],
+                          ),
                         ),
                       ),
                     ),
